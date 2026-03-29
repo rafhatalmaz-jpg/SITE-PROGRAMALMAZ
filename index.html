@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мой сайт</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1d3a;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+/* ВОТ ГЛАВНОЕ — БОЛЬШОЙ ТЕКСТ */
+.section p {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.4;
+    max-width: 900px;
+}
+
+/* КНОПКИ */
+button {
+    margin-top: 30px;
+    padding: 15px 35px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #0b1d3a;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #ddd;
+}
+
+/* POPUP */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0b1d3a;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    font-weight: bold;
+    z-index: 999;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* АДАПТАЦИЯ ПОД ТЕЛЕФОН */
+@media (max-width: 600px) {
+    .section p {
+        font-size: 26px;
+    }
+    .popup {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 1 блок -->
+<div class="section">
+    <p>
+        Я создаю мощные и стильные сайты для бизнеса.<br>
+        Всё выглядит дорого и современно.<br>
+        Работаю быстро и чётко без лишнего.<br>
+        Клиенты остаются довольны результатом.
+    </p>
+    <button onclick="showPhone()">Позвонить</button>
+</div>
+
+<!-- 2 блок -->
+<div class="section">
+    <p>
+        Хочешь сайт или аватарку — напиши мне.<br>
+        Отвечаю быстро без игнора.<br>
+        Помогаю с идеями и дизайном.<br>
+        Сделаем тебе топ результат.
+    </p>
+    <button onclick="showTG()">Написать в TG</button>
+</div>
+
+<!-- 3 блок -->
+<div class="section">
+    <p>
+        Уникальный дизайн под твой стиль.<br>
+        Минимум воды — максимум результата.<br>
+        Всё делаю под клиента.<br>
+        Твой проект будет выделяться.
+    </p>
+</div>
+
+<!-- 4 блок -->
+<div class="section">
+    <p>
+        Не жди — начинай сейчас.<br>
+        Пока другие думают, ты зарабатываешь.<br>
+        Сделай шаг вперёд уже сегодня.<br>
+        Напиши и начнём.
+    </p>
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="close" onclick="closePopup()">✖</div>
+    <div id="popupText"></div>
+</div>
+
+<script>
+function showPhone() {
+    document.getElementById("popup").style.display = "flex";
+    document.getElementById("popupText").innerText = "8 778 547 3137";
+}
+
+function showTG() {
+    document.getElementById("popup").style.display = "flex";
+    document.getElementById("popupText").innerText = "@limipay1";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
