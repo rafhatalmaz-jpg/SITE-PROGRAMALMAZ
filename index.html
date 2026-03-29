@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мой сайт</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1d3a;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: #0b1d3a;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ddd;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0b1d3a;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    z-index: 999;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 1 блок -->
+<div class="section">
+    <p>
+        Я создаю современные и стильные сайты для бизнеса. <br>
+        Делаю всё быстро и качественно. <br>
+        Учитываю все пожелания клиента. <br>
+        Твой проект будет выглядеть дорого и привлекать людей.
+    </p>
+    <button onclick="showPhone()">Позвонить</button>
+</div>
+
+<!-- 2 блок -->
+<div class="section">
+    <p>
+        Хочешь заказать сайт или аватарку? <br>
+        Напиши мне прямо сейчас. <br>
+        Отвечаю быстро и по делу. <br>
+        Помогу сделать крутой результат.
+    </p>
+    <button onclick="showTG()">Написать в TG</button>
+</div>
+
+<!-- 3 блок -->
+<div class="section">
+    <p>
+        Делаю дизайн, который цепляет. <br>
+        Уникальный стиль под каждого клиента. <br>
+        Работаю с идеями любой сложности. <br>
+        Твой бренд станет заметным.
+    </p>
+</div>
+
+<!-- 4 блок -->
+<div class="section">
+    <p>
+        Не откладывай — начни сейчас. <br>
+        Конкуренты уже делают сайты. <br>
+        Ты можешь быть впереди. <br>
+        Закажи и получи результат.
+    </p>
+</div>
+
+<!-- popup -->
+<div class="popup" id="popup">
+    <div class="close" onclick="closePopup()">✖</div>
+    <div id="popupText"></div>
+</div>
+
+<script>
+function showPhone() {
+    document.getElementById("popup").style.display = "flex";
+    document.getElementById("popupText").innerText = "8 778 547 3137";
+}
+
+function showTG() {
+    document.getElementById("popup").style.display = "flex";
+    document.getElementById("popupText").innerText = "@limipay1";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
